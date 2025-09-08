@@ -1,0 +1,12 @@
+{
+  "name": "base",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/main.ts",
+    "build:win": "bun build --compile --target=bun-windows-x64 src/main.ts --outfile launcher.exe --windows-hide-console",
+    "build:linux": "bun build --compile --target=bun-linux-x64 src/main.ts --outfile launcher"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
