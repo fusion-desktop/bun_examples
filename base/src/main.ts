@@ -1,7 +1,7 @@
-import { join } from "path";
+import { dirname, join } from "path";
 
 const main = async () => {
-  const webviewFile = join(process.cwd(), process.platform === "win32" ? "webview.exe" : "webview");
+  const webviewFile = join(dirname(process.execPath), process.platform === "win32" ? "webview.exe" : "webview");
   const isFileExist = await Bun.file(webviewFile).exists();
   if (!isFileExist) return console.log("Webview file not found.");
 
